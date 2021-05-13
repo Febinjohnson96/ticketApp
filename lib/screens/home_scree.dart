@@ -4,6 +4,12 @@ import 'package:ticketapp/widget/new_movies.dart';
 import 'package:ticketapp/widget/upcoming_movies.dart';
 
 class HomeScreen extends StatelessWidget {
+  final List _icons = [
+    EvaIcons.homeOutline,
+    EvaIcons.videoOutline,
+    EvaIcons.clipboardOutline,
+    EvaIcons.personOutline,
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,16 +102,16 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
-              children: [Icon(EvaIcons.homeOutline), Text('Home')],
+              children: [Icon(_icons[0]), Text('Home')],
             ),
             Column(
-              children: [Icon(EvaIcons.videoOutline), Text('Booking')],
+              children: [Icon(_icons[1]), Text('Booking')],
             ),
             Column(
-              children: [Icon(EvaIcons.clipboardOutline), Text('List')],
+              children: [Icon(_icons[2]), Text('List')],
             ),
             Column(
-              children: [Icon(EvaIcons.personOutline), Text('Home')],
+              children: [Icon(_icons[3]), Text('Home')],
             ),
           ],
         ),
