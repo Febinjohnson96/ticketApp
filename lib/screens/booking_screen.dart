@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticketapp/model/movies.dart';
+import 'package:ticketapp/screens/checkout_screen.dart';
 import 'package:ticketapp/widget/rating.dart';
 
 class BookingScreen extends StatelessWidget {
@@ -14,7 +15,9 @@ class BookingScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             }),
-        title: Text(moviedata.movieName),
+        title: Container(
+            padding: EdgeInsets.symmetric(horizontal: 90),
+            child: Text(moviedata.movieName)),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,7 +190,17 @@ class BookingScreen extends StatelessWidget {
                       MaterialStateProperty.all<Color>(Colors.black),
                 ),
                 child: Text('Booking'),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CheckOutScreen(
+                        moviedata,
+                      ),
+                      settings: RouteSettings(name: 'CheckoutScreen'),
+                    ),
+                  );
+                },
               ),
             )
           ],
