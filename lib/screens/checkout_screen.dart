@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:ticketapp/model/movies.dart';
+import 'package:ticketapp/screens/confirm_screen.dart';
 
 class CheckOutScreen extends StatefulWidget {
   final Movies movidata;
@@ -17,6 +18,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
@@ -301,7 +303,14 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
           height: 80,
           width: 180,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfirmScreen(moviedata),
+                ),
+              );
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
             ),
