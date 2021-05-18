@@ -246,6 +246,15 @@ class _BookingScreenDesktop extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              movieDatas.movieName,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             RatingStars(movieDatas.rating),
             Container(
               width: 500,
