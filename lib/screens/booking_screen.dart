@@ -99,7 +99,7 @@ class _BookingScreenmobile extends StatelessWidget {
                 width: 500,
                 height: 300,
                 fit: BoxFit.cover,
-                image: NetworkImage(movieData.imgUrl),
+                image: AssetImage(movieData.imgUrl),
               ),
             ),
           ),
@@ -240,8 +240,7 @@ class _BookingScreenDesktop extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child:
-                  Image(height: 500, image: NetworkImage(movieDatas.imgUrl))),
+              child: Image(height: 500, image: AssetImage(movieDatas.imgUrl))),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,

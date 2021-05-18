@@ -47,7 +47,7 @@ class ConfirmScreen extends StatelessWidget {
                 height: 300,
                 width: 300,
                 fit: BoxFit.cover,
-                image: NetworkImage(movieData.imgUrl),
+                image: AssetImage(movieData.imgUrl),
               ),
             ),
             SizedBox(

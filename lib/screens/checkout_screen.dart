@@ -42,7 +42,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         height: 150,
                         width: 150,
                         fit: BoxFit.cover,
-                        image: NetworkImage(moviedata.imgUrl)),
+                        image: AssetImage(moviedata.imgUrl)),
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
