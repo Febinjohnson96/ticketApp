@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticketapp/model/movies.dart';
 import 'package:ticketapp/screens/checkout_screen.dart';
 import 'package:ticketapp/widget/rating.dart';
+import 'package:ticketapp/widget/responsive.dart';
 
 class BookingScreen extends StatelessWidget {
   final Movies moviedata;
@@ -20,7 +21,74 @@ class BookingScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 90),
             child: Text(moviedata.movieName)),
       ),
-      body: Column(
+      body: Responsive(
+          mobile: _BookingScreenmobile(moviedata),
+          desktop: _BookingScreenDesktop(moviedata)),
+      bottomSheet: Responsive.isDesktop(context)
+          ? null
+          : Container(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Price',
+                        style: TextStyle(
+                          color: Colors.grey[350],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '\$56,6',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 60,
+                    width: 160,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black),
+                      ),
+                      child: Text('Book Ticket'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CheckOutScreen(
+                              moviedata,
+                            ),
+                            settings: RouteSettings(name: 'CheckoutScreen'),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+            ),
+    );
+  }
+}
+
+class _BookingScreenmobile extends StatelessWidget {
+  final Movies movieData;
+  _BookingScreenmobile(this.movieData);
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -31,16 +99,16 @@ class BookingScreen extends StatelessWidget {
                 width: 500,
                 height: 300,
                 fit: BoxFit.cover,
-                image: NetworkImage(moviedata.imgUrl),
+                image: NetworkImage(movieData.imgUrl),
               ),
             ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              RatingStars(moviedata.rating),
+              RatingStars(movieData.rating),
               SizedBox(width: 30),
-              Text(moviedata.genre.toString()),
+              Text(movieData.genre.toString()),
             ],
           ),
           SizedBox(
@@ -146,7 +214,7 @@ class BookingScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              moviedata.desc,
+              movieData.desc,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Colors.grey[400],
@@ -155,58 +223,155 @@ class BookingScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomSheet: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    );
+  }
+}
+
+class _BookingScreenDesktop extends StatelessWidget {
+  final Movies movieDatas;
+  _BookingScreenDesktop(this.movieDatas);
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child:
+                  Image(height: 500, image: NetworkImage(movieDatas.imgUrl))),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            RatingStars(movieDatas.rating),
+            Container(
+              width: 500,
+              padding: EdgeInsets.all(20),
+              child: Text(
+                movieDatas.desc,
+                style:
+                    TextStyle(fontWeight: FontWeight.w600, color: Colors.grey),
+              ),
+            ),
+            Text(
+              movieDatas.language,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  'Price',
-                  style: TextStyle(
-                    color: Colors.grey[350],
+                Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        'Date',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '27',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  width: 50,
                 ),
-                Text(
-                  '\$56,6',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19,
+                Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        'Hour',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '14:10',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        'Select seat',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Seat No',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
-            ),
-            SizedBox(
-              height: 60,
-              width: 160,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
-                ),
-                child: Text('Booking'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CheckOutScreen(
-                        moviedata,
-                      ),
-                      settings: RouteSettings(name: 'CheckoutScreen'),
-                    ),
-                  );
-                },
-              ),
             )
           ],
         ),
-      ),
+        SizedBox(
+          height: 50,
+          width: 200,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+            ),
+            child: Text('Book Ticket'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CheckOutScreen(
+                    movieDatas,
+                  ),
+                  settings: RouteSettings(name: 'CheckoutScreen'),
+                ),
+              );
+            },
+          ),
+        )
+      ],
     );
   }
 }
