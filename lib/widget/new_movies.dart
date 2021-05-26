@@ -34,7 +34,7 @@ class _NewMoviesState extends State<NewMovies> {
                   height: 200,
                   width: 250,
                   fit: BoxFit.cover,
-                  image: AssetImage(movies.imgUrl),
+                  image: AssetImage(movies.imgUrl!),
                 ),
               ),
               SizedBox(
@@ -48,7 +48,7 @@ class _NewMoviesState extends State<NewMovies> {
                     Row(
                       children: [
                         Text(
-                          movies.movieName,
+                          movies.movieName!,
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class _NewMoviesState extends State<NewMovies> {
                           width: 5,
                         ),
                         Text(
-                          movies.language,
+                          movies.language!,
                           style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w600,

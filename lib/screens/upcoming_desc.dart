@@ -28,7 +28,7 @@ class UpComingDesc extends StatelessWidget {
                 width: 500,
                 height: 300,
                 fit: BoxFit.cover,
-                image: NetworkImage(releases.imgUrls),
+                image: NetworkImage(releases.imgUrls!),
               ),
             ),
           ),
@@ -38,7 +38,7 @@ class UpComingDesc extends StatelessWidget {
           Column(
             children: [
               Text(
-                releases.newmovieName,
+                releases.newmovieName!,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class UpComingDesc extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                releases.language,
+                releases.language!,
                 style: TextStyle(
                   color: Colors.grey[400],
                   fontWeight: FontWeight.w600,
@@ -79,7 +79,7 @@ class UpComingDesc extends StatelessWidget {
           Container(
               padding: EdgeInsets.all(30),
               child: Text(
-                releases.description,
+                releases.description!,
                 style: TextStyle(
                   color: Colors.grey[400],
                   fontWeight: FontWeight.bold,

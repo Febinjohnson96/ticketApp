@@ -27,7 +27,7 @@ class _UpcomingMoviesState extends State<UpcomingMovies> {
                   height: 100,
                   width: 100,
                   fit: BoxFit.cover,
-                  image: NetworkImage(release.imgUrls)),
+                  image: NetworkImage(release.imgUrls!)),
             ),
             Container(
               padding: EdgeInsets.all(10),
@@ -35,7 +35,7 @@ class _UpcomingMoviesState extends State<UpcomingMovies> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    release.newmovieName,
+                    release.newmovieName!,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _UpcomingMoviesState extends State<UpcomingMovies> {
                     height: 5,
                   ),
                   Text(
-                    release.language,
+                    release.language!,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.grey,

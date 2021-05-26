@@ -61,7 +61,7 @@ class _ConfirmScreenMobile extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 30),
               child: Text(
-                movieData.movieName,
+                movieData.movieName!,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
@@ -70,7 +70,7 @@ class _ConfirmScreenMobile extends StatelessWidget {
             ),
           ),
           Text(
-            movieData.language,
+            movieData.language!,
             style: TextStyle(
               color: Colors.grey[400],
               fontSize: 18,
@@ -86,7 +86,7 @@ class _ConfirmScreenMobile extends StatelessWidget {
               height: 300,
               width: 300,
               fit: BoxFit.cover,
-              image: AssetImage(movieData.imgUrl),
+              image: AssetImage(movieData.imgUrl!),
             ),
           ),
           SizedBox(
@@ -147,14 +147,14 @@ class _ConfirmScreenDesktop extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image(height: 500, image: AssetImage(movieDatas.imgUrl))),
+              child: Image(height: 500, image: AssetImage(movieDatas.imgUrl!))),
         ),
         Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                movieDatas.movieName,
+                movieDatas.movieName!,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -162,7 +162,7 @@ class _ConfirmScreenDesktop extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                movieDatas.language,
+                movieDatas.language!,
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.grey[350],

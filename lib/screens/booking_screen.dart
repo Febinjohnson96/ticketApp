@@ -19,7 +19,7 @@ class BookingScreen extends StatelessWidget {
             }),
         title: Container(
             padding: EdgeInsets.symmetric(horizontal: 90),
-            child: Text(moviedata.movieName)),
+            child: Text(moviedata.movieName!)),
       ),
       body: Responsive(
           mobile: _BookingScreenmobile(moviedata),
@@ -99,7 +99,7 @@ class _BookingScreenmobile extends StatelessWidget {
                 width: 500,
                 height: 300,
                 fit: BoxFit.cover,
-                image: AssetImage(movieData.imgUrl),
+                image: AssetImage(movieData.imgUrl!),
               ),
             ),
           ),
@@ -214,7 +214,7 @@ class _BookingScreenmobile extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              movieData.desc,
+              movieData.desc!,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Colors.grey[400],
@@ -240,13 +240,13 @@ class _BookingScreenDesktop extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image(height: 500, image: AssetImage(movieDatas.imgUrl))),
+              child: Image(height: 500, image: AssetImage(movieDatas.imgUrl!))),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              movieDatas.movieName,
+              movieDatas.movieName!,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
               ),
@@ -259,13 +259,13 @@ class _BookingScreenDesktop extends StatelessWidget {
               width: 500,
               padding: EdgeInsets.all(20),
               child: Text(
-                movieDatas.desc,
+                movieDatas.desc!,
                 style:
                     TextStyle(fontWeight: FontWeight.w600, color: Colors.grey),
               ),
             ),
             Text(
-              movieDatas.language,
+              movieDatas.language!,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
               ),

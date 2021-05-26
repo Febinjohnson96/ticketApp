@@ -82,7 +82,7 @@ class __CheckOutScreenMobileState extends State<_CheckOutScreenMobile> {
                       height: 150,
                       width: 150,
                       fit: BoxFit.cover,
-                      image: AssetImage(moviesData.imgUrl)),
+                      image: AssetImage(moviesData.imgUrl!)),
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -90,7 +90,7 @@ class __CheckOutScreenMobileState extends State<_CheckOutScreenMobile> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        moviesData.movieName,
+                        moviesData.movieName!,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -375,14 +375,14 @@ class _CheckOutScreenDesktopState extends State<_CheckOutScreenDesktop> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image(height: 500, image: AssetImage(moviesDatas.imgUrl))),
+              child: Image(height: 500, image: AssetImage(moviesDatas.imgUrl!))),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              moviesDatas.movieName,
+              moviesDatas.movieName!,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
