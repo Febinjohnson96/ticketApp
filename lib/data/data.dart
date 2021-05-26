@@ -6,8 +6,7 @@ List<Movies> movielists = [
     movieName: 'Nayattu',
     language: 'Malayalam',
     rating: 4,
-    imgUrl:
-        'https://m.media-amazon.com/images/M/MV5BOTdhMWQ5YTYtNTNkMy00NGIzLWE2NjItYjhkYjQwMjljMDU1XkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg',
+    imgUrl: 'images/posters/nayattu.jpg',
     desc:
         'Praveen Michael (Kunchacko Boban) rejoins the police force in a new station as a CPO (civil police officer). A local political goon, Biju (Dineesh P), who is related to police officer CPO Sunitha (Nimisha Sajayan), is summoned for being a constant trouble-maker. Praveen and his senior officer (Asst Sub Inspector) ASI Maniyan (Joju George) get into a scuffle with the goon and locks him up in the cell.',
     runTime: '144',
@@ -17,19 +16,17 @@ List<Movies> movielists = [
     movieName: 'Karnan',
     language: 'Tamil',
     rating: 3,
-    imgUrl:
-        'https://www.filmibeat.com/ph-big/2021/04/karnan-movie-posters_16179793174.jpg',
+    imgUrl: 'images/posters/karnan.jpg',
     desc:
         'Karnan, a fearless village youth, must fight for the rights of the people of his village. The people of the village belong to a marginalized community that has been oppressed for decades, mainly by the dominant caste groups in the region aided by the government officials and the police who intend to keep them suppressed under their shoes',
     runTime: '143.2',
     genre: ['Thriller', 'Crime'],
   ),
   Movies(
-    movieName: 'Wrath Of Man',
+    movieName: 'Wrath OF Man',
     language: 'English',
     rating: 4,
-    imgUrl:
-        'https://cdn.flickeringmyth.com/wp-content/uploads/2021/03/Wrath-of-Man.jpg',
+    imgUrl: 'images/posters/wrath.jpg',
     desc:
         'Patrick Hill begins work at Fortico Security, an armored truck company. After being commended by the superior Terry for his references, he is introduced to Bullet, who nicknames him "H" and oversees his training. H gets off to a rocky start with his colleagues, particularly Boy Sweat Dave, over his mysterious nature',
     runTime: '94.8',
@@ -39,8 +36,7 @@ List<Movies> movielists = [
     movieName: 'GodZilla vs Kong',
     language: 'English',
     rating: 4,
-    imgUrl:
-        'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSNPj2bgqy8zGbvRUZPOpXvF58dwGwGk_1-GX1P_m7yHnj-8Ebd',
+    imgUrl: 'images/posters/gvk.jpg',
     desc:
         'Five years after Godzilla defeated King Ghidorah,[c] Kong is monitored by Monarch within a giant dome on Skull Island. Kong is visited by Jia, the last Iwi native and Kong expert Ilene Andrews',
     runTime: '94.8',

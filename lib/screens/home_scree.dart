@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:ticketapp/widget/new_movies.dart';
 import 'package:ticketapp/widget/upcoming_movies.dart';
+import 'package:ticketapp/widget/responsive.dart';
 
 class HomeScreen extends StatelessWidget {
   final List _icons = [
@@ -95,27 +96,29 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomSheet: Container(
-        height: 50,
-        width: MediaQuery.of(context).size.width,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [Icon(_icons[0]), Text('Home')],
+      bottomSheet: Responsive.isDesktop(context)
+          ? null
+          : Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [Icon(_icons[0]), Text('Home')],
+                  ),
+                  Column(
+                    children: [Icon(_icons[1]), Text('Booking')],
+                  ),
+                  Column(
+                    children: [Icon(_icons[2]), Text('List')],
+                  ),
+                  Column(
+                    children: [Icon(_icons[3]), Text('Home')],
+                  ),
+                ],
+              ),
             ),
-            Column(
-              children: [Icon(_icons[1]), Text('Booking')],
-            ),
-            Column(
-              children: [Icon(_icons[2]), Text('List')],
-            ),
-            Column(
-              children: [Icon(_icons[3]), Text('Home')],
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

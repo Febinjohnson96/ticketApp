@@ -34,7 +34,7 @@ class _NewMoviesState extends State<NewMovies> {
                   height: 200,
                   width: 250,
                   fit: BoxFit.cover,
-                  image: NetworkImage(movies.imgUrl),
+                  image: AssetImage(movies.imgUrl),
                 ),
               ),
               SizedBox(
